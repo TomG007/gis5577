@@ -1,5 +1,5 @@
 CREATE TABLE mn_census_tracts_2000( 
-GID primary key serial,
+GID serial primary key,
 GIS_Join_Match_Code text,
 Data_File_Year integer,
 Region_Code integer,
@@ -136,5 +136,5 @@ Female_75_to_79_years integer,
 Female_80_to_84_years integer,
 Female_85_years_and_over integer,
 Male integer,
-Female integer,
-)
+Female integer
+);
