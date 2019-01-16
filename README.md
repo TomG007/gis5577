@@ -13,14 +13,13 @@ To load the dataset in your own database to the following steps.
 1. Connect to your database
 
 ```
-host address: 149.165.168.252, port: 5432
+host address: 1XX.1XX.1XX.XXX, port: 5432
 ```
 
 2. Create the mn_2000_census tracts table, by executing the create table statement ```mn_2000_census_tracts_tables.sql``` in the pgAdmin. The simplest way, is to can copy and paste this into a query. The text file ```mn_2000_census_tracts_tables.sql``` can be opened in a text editor (notepad++) to see the contents.
 
-```
-CREATE TABLE mn_census_tracts_2000(GID serial primary key,
-GIS_Join_Match_Code text,...);
+```SQL
+CREATE TABLE mn_census_tracts_2000(GID serial primary key, GIS_Join_Match_Code text,...);
 ```
 
 3. Load the table using the psql console
@@ -35,9 +34,6 @@ GIS_Join_Match_Code text,...);
   ```
   psql -h <hostaddress> -p 5432 -U <user> -d <database> -c "\copy mn_census_tracts_2000 from 'C:\git\GIS5577_spring_2019\GIS5577_week1\mn_census_tracts.csv' with header CSV"
   ```
-
-
-
 
 
 ### Please Complete by Next Week
