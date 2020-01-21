@@ -1,0 +1,29 @@
+sudo apt update && sudo apt -y upgrade
+
+sudo reboot
+
+sudo apt install -y wget vim
+
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" > /etc/apt/sources.list.d/PostgreSQL.list'
+
+deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+
+sudo apt-get update
+
+sudo apt install postgis postgresql-11-postgis-2.5
+
+sudo su -l postgres
+
+psql
+
+create database david;
+
+ALTER ROLE david WITH PASSWORD 'student';
+
+ALTER ROLE david WITH SUPERUSER CREATEDB CREATEROLE LOGIN;
+
+\c david
+
+CREATE EXTENSION postgis;
